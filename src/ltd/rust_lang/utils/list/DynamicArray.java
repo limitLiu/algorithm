@@ -1,15 +1,15 @@
-package ltd.rust_lang.utils;
+package ltd.rust_lang.utils.list;
 
-public class DynamicArray2<E> extends DefaultList<E> {
+public class DynamicArray<E> extends DefaultList<E> {
     private static final int DEFAULT_CAPACITY = 10;
 
     protected E[] elements;
 
-    public DynamicArray2(int capacity) {
+    public DynamicArray(int capacity) {
         elements = (E[]) new Object[capacity];
     }
 
-    public DynamicArray2() {
+    public DynamicArray() {
         this(DEFAULT_CAPACITY);
     }
 
@@ -41,7 +41,6 @@ public class DynamicArray2<E> extends DefaultList<E> {
          */
         if (size - index + 1 >= 0) System.arraycopy(elements, index + 1, elements, index, size - index + 1);
         elements[--size] = null;
-        trim();
         return old;
     }
 
@@ -77,7 +76,6 @@ public class DynamicArray2<E> extends DefaultList<E> {
         for (int i = 0; i < size; ++i) {
             elements[i] = null;
         }
-        trim();
         size = 0;
     }
 
@@ -115,14 +113,5 @@ public class DynamicArray2<E> extends DefaultList<E> {
     @Override
     public boolean contains(E element) {
         return indexOf(element) != ELEMENT_NOT_FOUND;
-    }
-
-    private void trim() {
-        int old = elements.length;
-        int newC = old >> 1;
-        if (size > newC || old <= DEFAULT_CAPACITY) return;
-        E[] newElements = (E[]) new Object[newC];
-        if (size >= 0) System.arraycopy(elements, 0, newElements, 0, size);
-        elements = newElements;
     }
 }

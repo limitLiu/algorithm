@@ -1,4 +1,4 @@
-package ltd.rust_lang.utils;
+package ltd.rust_lang.utils.list;
 
 public interface MyList<E> {
 

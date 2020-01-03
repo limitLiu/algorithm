@@ -1,7 +1,9 @@
 package ltd.rust_lang;
 
 import ltd.rust_lang.entities.Person;
-import ltd.rust_lang.utils.*;
+import ltd.rust_lang.utils.IStack;
+import ltd.rust_lang.utils.Stack;
+import ltd.rust_lang.utils.list.*;
 
 public class Main {
 
@@ -52,6 +54,14 @@ public class Main {
             circleDoublyLinkList.next();
             circleDoublyLinkList.next();
             circleDoublyLinkList.remove();
+        }
+
+        IStack<Integer> stack = new Stack<>();
+        stack.push(11);
+        stack.push(12);
+
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop());
         }
     }
 }

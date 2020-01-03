@@ -1,4 +1,4 @@
-package ltd.rust_lang.utils;
+package ltd.rust_lang.utils.list;
 
 public class CircleDoublyLinkList<E> extends DefaultList<E> {
 
@@ -16,6 +16,23 @@ public class CircleDoublyLinkList<E> extends DefaultList<E> {
       this.next = next;
       this.prev = prev;
     }
+
+    @Override
+    public String toString() {
+      StringBuilder str = new StringBuilder();
+      if (prev != null) {
+        str.append(prev.element);
+      } else {
+        str.append("null");
+      }
+      str.append("-").append(element).append("-");
+      if (next != null) {
+        str.append(next.element);
+      } else {
+        str.append("null");
+      }
+      return str.toString();
+    }
   }
 
   @Override
@@ -27,11 +44,10 @@ public class CircleDoublyLinkList<E> extends DefaultList<E> {
       if (old == null) {
         first = last;
         first.next = last;
-        first.prev = last;
       } else {
         old.next = last;
-        first.prev = last;
       }
+      first.prev = last;
     } else {
       Node<E> next = getNode(index);
       Node<E> prev = next.prev;
@@ -131,11 +147,11 @@ public class CircleDoublyLinkList<E> extends DefaultList<E> {
   @Override
   public String toString() {
     StringBuilder str = new StringBuilder();
-    str.append("size = ").append(size).append(", ").append("[");
-    Node<E> node = first.next;
+    str.append("size = ").append(size).append(", [");
+    Node<E> node = first;
     for (int i = 0; i < size; ++i) {
-      str.append(node.element);
-      if (i != size - 1) str.append(", ");
+      if (i != 0) str.append(", ");
+      str.append(node);
       node = node.next;
     }
     str.append("]");

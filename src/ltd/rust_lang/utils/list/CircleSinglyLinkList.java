@@ -1,65 +1,65 @@
-package ltd.rust_lang.utils;
+package ltd.rust_lang.utils.list;
 
-public class DoublyLinkList<E> extends DefaultList<E> {
+public class CircleSinglyLinkList<E> extends DefaultList<E> {
 
   private Node<E> first;
-  private Node<E> last;
+  private Node<E> current;
 
   private static class Node<E> {
     E element;
-    Node<E> prev;
     Node<E> next;
 
-    Node(E element, Node<E> prev, Node<E> next) {
+    Node(E element, Node<E> next) {
       this.element = element;
       this.next = next;
-      this.prev = prev;
     }
+  }
+
+  @Override
+  public boolean isEmpty() {
+    return size() == 0;
   }
 
   @Override
   public void insert(int index, E element) {
     rangeCheckInsert(index);
-
-    if (index == size()) {
-      Node<E> old = last;
-      last = new Node<>(element, old, null);
-      if (old == null) {
-        first = last;
-      } else {
-        old.next = last;
-      }
+    if (index == 0) {
+      Node<E> newFirst = new Node<>(element, first);
+      Node<E> last = size() == 0 ? newFirst : getNode(size() - 1);
+      last.next = newFirst;
+      first = newFirst;
     } else {
-      Node<E> next = getNode(index);
-      Node<E> prev = next.prev;
-      Node<E> newNode = new Node<>(element, prev, next);
-      next.prev = newNode;
-      if (prev == null) {
-        first = newNode;
-      } else {
-        prev.next = newNode;
-      }
+      Node<E> prev = getNode(index - 1);
+      prev.next = new Node<>(element, prev.next);
     }
     ++size;
   }
 
   @Override
+  public boolean add(E element) {
+    insert(size(), element);
+    return true;
+  }
+
+  @Override
   public E remove(int index) {
-    Node<E> current = getNode(index);
-    Node<E> next = current.next;
-    Node<E> prev = current.prev;
-    if (prev == null) {
-      first = next;
-      next.prev = null;
-    } else if (next == null) {
-      last = prev;
-      prev.next = null;
+    rangeCheck(index);
+    Node<E> deleted = first;
+    if (index == 0) {
+      if (size() == 0) {
+        first = null;
+      } else {
+        Node<E> last = getNode(size() - 1);
+        first = first.next;
+        last.next = first;
+      }
     } else {
-      prev.next = next;
-      next.prev = prev;
+      Node<E> prev = getNode(index - 1);
+      deleted = prev.next;
+      prev.next = deleted.next;
     }
     --size;
-    return current.element;
+    return deleted.element;
   }
 
   @Override
@@ -79,7 +79,6 @@ public class DoublyLinkList<E> extends DefaultList<E> {
   public void clear() {
     size = 0;
     first = null;
-    last = null;
   }
 
   @Override
@@ -98,22 +97,20 @@ public class DoublyLinkList<E> extends DefaultList<E> {
   }
 
   @Override
+  public int size() {
+    return this.size;
+  }
+
+  @Override
   public E remove(E element) {
     return remove(indexOf(element));
   }
 
   private Node<E> getNode(int index) {
     rangeCheck(index);
-    boolean tmp = index < (size() >> 1);
-    Node<E> node = tmp ? first : last;
-    if (tmp) {
-      for (int i = 0; i < index; ++i) {
-        node = node.next;
-      }
-    } else {
-      for (int i = size(); i > index; --i) {
-        node = node.prev;
-      }
+    Node<E> node = first;
+    for (int i = 0; i < index; i++) {
+      node = node.next;
     }
     return node;
   }
@@ -122,7 +119,7 @@ public class DoublyLinkList<E> extends DefaultList<E> {
   public String toString() {
     StringBuilder str = new StringBuilder();
     str.append("size = ").append(size).append(", ").append("[");
-    Node<E> node = first.next;
+    Node<E> node = first;
     for (int i = 0; i < size; ++i) {
       str.append(node.element);
       if (i != size - 1) str.append(", ");

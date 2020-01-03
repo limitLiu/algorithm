@@ -1,6 +1,6 @@
-package ltd.rust_lang.utils;
+package ltd.rust_lang.utils.list;
 
-public class SinglyLinkList<E> extends DefaultList<E> {
+public class SinglyLinkList2<E> extends DefaultList<E> {
 
     private Node<E> first;
 
@@ -14,6 +14,10 @@ public class SinglyLinkList<E> extends DefaultList<E> {
         }
     }
 
+    public SinglyLinkList2() {
+        first = new Node<>(null, null);
+    }
+
     @Override
     public boolean isEmpty() {
         return size() == 0;
@@ -22,12 +26,8 @@ public class SinglyLinkList<E> extends DefaultList<E> {
     @Override
     public void insert(int index, E element) {
         rangeCheckInsert(index);
-        if (index == 0) {
-            first = new Node<>(element, first);
-        } else {
-            Node<E> prev = getNode(index - 1);
-            prev.next = new Node<>(element, prev.next);
-        }
+        Node<E> prev = index == 0 ? first : getNode(index - 1);
+        prev.next = new Node<>(element, prev.next);
         ++size;
     }
 
@@ -40,14 +40,9 @@ public class SinglyLinkList<E> extends DefaultList<E> {
     @Override
     public E remove(int index) {
         rangeCheck(index);
-        Node<E> deleted = first;
-        if (index == 0) {
-            first = first.next;
-        } else {
-            Node<E> prev = getNode(index - 1);
-            deleted = prev.next;
-            prev.next = deleted.next;
-        }
+        Node<E> prev = index == 0 ? first : getNode(index - 1);
+        Node<E> deleted = prev.next;
+        prev.next = deleted.next;
         --size;
         return deleted.element;
     }
@@ -98,7 +93,7 @@ public class SinglyLinkList<E> extends DefaultList<E> {
 
     private Node<E> getNode(int index) {
         rangeCheck(index);
-        Node<E> node = first;
+        Node<E> node = first.next;
         for (int i = 0; i < index; i++) {
             node = node.next;
         }
@@ -109,7 +104,7 @@ public class SinglyLinkList<E> extends DefaultList<E> {
     public String toString() {
         StringBuilder str = new StringBuilder();
         str.append("size = ").append(size).append(", ").append("[");
-        Node<E> node = first;
+        Node<E> node = first.next;
         for (int i = 0; i < size; ++i) {
             str.append(node.element);
             if (i != size - 1) str.append(", ");

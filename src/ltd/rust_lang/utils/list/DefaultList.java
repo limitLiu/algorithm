@@ -1,4 +1,4 @@
-package ltd.rust_lang.utils;
+package ltd.rust_lang.utils.list;
 
 public abstract class DefaultList<E> implements MyList<E> {
     protected int size = 0;
