@@ -10,4 +10,6 @@ public interface IStack<E> {
   boolean isEmpty();
 
   E top();
+
+  void clear();
 }

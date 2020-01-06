@@ -30,4 +30,9 @@ public class Stack<E> implements IStack<E> {
   public E top() {
     return list.get(size() - 1);
   }
+
+  @Override
+  public void clear() {
+    list.clear();
+  }
 }
