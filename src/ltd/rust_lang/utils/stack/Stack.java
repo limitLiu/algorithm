@@ -1,4 +1,4 @@
-package ltd.rust_lang.utils;
+package ltd.rust_lang.utils.stack;
 
 import ltd.rust_lang.utils.list.DynamicArray;
 import ltd.rust_lang.utils.list.MyList;

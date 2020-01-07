@@ -1,14 +1,46 @@
 package ltd.rust_lang;
 
 import ltd.rust_lang.entities.Person;
-import ltd.rust_lang.utils.IStack;
-import ltd.rust_lang.utils.Stack;
+import ltd.rust_lang.utils.stack.IStack;
+import ltd.rust_lang.utils.stack.Stack;
 import ltd.rust_lang.utils.list.*;
+import ltd.rust_lang.utils.queue.CircleQueue;
 import ltd.rust_lang.utils.queue.Deque;
 
 public class Main {
 
   public static void main(String[] args) {
+    testQueue();
+  }
+
+  private static void testQueue() {
+    Deque<Integer> deque = new Deque<>();
+    deque.enQueueFront(11);
+    deque.enQueueFront(22);
+    deque.enQueueRear(33);
+    deque.enQueueRear(44);
+    while (!deque.isEmpty()) {
+      System.out.println(deque.deQueueFront());
+    }
+
+    System.out.println("-----");
+    CircleQueue<Integer> circleQueue = new CircleQueue<>();
+    for (int i = 0; i < 10; ++i) {
+      circleQueue.enQueue(i);
+    }
+    for (int i = 0; i < 5; ++i) {
+      circleQueue.deQueue();
+    }
+    for (int i = 15; i < 24; ++i) {
+      circleQueue.enQueue(i);
+    }
+    System.out.println(circleQueue);
+    while (!circleQueue.isEmpty()) {
+      System.out.println(circleQueue.deQueue());
+    }
+  }
+
+  static void testList() {
     MyList<Integer> array = new DynamicArray<>();
     array.add(11);
     array.add(12);
@@ -45,7 +77,6 @@ public class Main {
     circleSinglyList.add(44);
     circleSinglyList.insert(0, 55);
     System.out.println(circleSinglyList);
-
     CircleDoublyLinkList<Integer> circleDoublyLinkList = new CircleDoublyLinkList<>();
     for (int i = 0; i < 8; ++i) {
       circleDoublyLinkList.add(i);
@@ -56,7 +87,9 @@ public class Main {
       circleDoublyLinkList.next();
       circleDoublyLinkList.remove();
     }
+  }
 
+  static void testStack() {
     IStack<Integer> stack = new Stack<>();
     stack.push(11);
     stack.push(12);
@@ -64,16 +97,6 @@ public class Main {
     while (!stack.isEmpty()) {
       System.out.println(stack.pop());
     }
-
-    Deque<Integer> deque = new Deque<>();
-    deque.enQueueFront(11);
-    deque.enQueueFront(22);
-    deque.enQueueRear(33);
-    deque.enQueueRear(44);
-    System.out.println("-----");
-    while (!deque.isEmpty()) {
-      System.out.println(deque.deQueueFront());
-    }
-
   }
+
 }

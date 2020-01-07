@@ -1,4 +1,4 @@
-package ltd.rust_lang.leetcode;
+package ltd.rust_lang.leetcode.queue;
 
 import java.util.Stack;
 

@@ -3,7 +3,7 @@ package ltd.rust_lang.utils.list;
 public class DynamicArray2<E> extends DefaultList<E> {
     private static final int DEFAULT_CAPACITY = 10;
 
-    protected E[] elements;
+    private E[] elements;
 
     public DynamicArray2(int capacity) {
         elements = (E[]) new Object[capacity];
@@ -103,11 +103,6 @@ public class DynamicArray2<E> extends DefaultList<E> {
         if (old >= capacity) return;
         int newC = old + (old >> 1);
         E[] newElements = (E[]) new Object[newC];
-        /*
-        for (int i = 0; i < size; ++i) {
-            newElements[i] = elements[i];
-        }
-         */
         if (size >= 0) System.arraycopy(elements, 0, newElements, 0, size);
         elements = newElements;
     }

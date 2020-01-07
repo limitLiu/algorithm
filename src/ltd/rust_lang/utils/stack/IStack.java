@@ -1,4 +1,4 @@
-package ltd.rust_lang.utils;
+package ltd.rust_lang.utils.stack;
 
 public interface IStack<E> {
   E pop();

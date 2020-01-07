@@ -3,15 +3,15 @@ package ltd.rust_lang.utils.list;
 public abstract class DefaultList<E> implements MyList<E> {
     protected int size = 0;
 
-    protected void rangeCheck(int index) {
+    void rangeCheck(int index) {
         if (index >= size || index < 0) outBounds(index);
     }
 
-    protected void rangeCheckInsert(int index) {
+    void rangeCheckInsert(int index) {
         if (index > size || index < 0) outBounds(index);
     }
 
-    protected void outBounds(int index) {
+    private void outBounds(int index) {
         throw new IndexOutOfBoundsException("index: " + index + ", size: " + size);
     }
 
