@@ -1,6 +1,7 @@
 package ltd.rust_lang;
 
 import ltd.rust_lang.entities.Person;
+import ltd.rust_lang.utils.queue.CircleDeque;
 import ltd.rust_lang.utils.stack.IStack;
 import ltd.rust_lang.utils.stack.Stack;
 import ltd.rust_lang.utils.list.*;
@@ -35,9 +36,14 @@ public class Main {
       circleQueue.enQueue(i);
     }
     System.out.println(circleQueue);
-    while (!circleQueue.isEmpty()) {
-      System.out.println(circleQueue.deQueue());
+
+    System.out.println("-----");
+    var circleDeque = new CircleDeque<>();
+    for (var i = 0; i < 10; ++i) {
+      circleDeque.enQueueFront(i);
+      circleDeque.enQueueRear(i + 100);
     }
+    System.out.println(circleDeque);
   }
 
   static void testList() {

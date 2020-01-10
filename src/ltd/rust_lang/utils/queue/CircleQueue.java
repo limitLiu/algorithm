@@ -1,5 +1,7 @@
 package ltd.rust_lang.utils.queue;
 
+import org.jetbrains.annotations.Contract;
+
 public class CircleQueue<E> {
   private int size;
   private int front;
@@ -9,8 +11,10 @@ public class CircleQueue<E> {
     elements = (E[]) new Object[10];
   }
 
+  @Contract(pure = true)
   private int idx(int i) {
-    return (i + front) % elements.length;
+    var index = i + front;
+    return index - (index >= elements.length ? elements.length : 0);
   }
 
   public int size() {
@@ -30,7 +34,7 @@ public class CircleQueue<E> {
   private void ensure(int capacity) {
     int old = elements.length;
     if (old >= capacity) return;
-    int newC = old + (old >> 1);
+    var newC = old + (old >> 1);
     E[] newElements = (E[]) new Object[newC];
     for (int i = 0; i < size; ++i) {
       newElements[i] = elements[idx(i)];
@@ -53,8 +57,9 @@ public class CircleQueue<E> {
 
   public void clear() {
     for (int i = 0; i < size; ++i) {
-      elements[i] = null;
+      elements[idx(i)] = null;
     }
+    front = 0;
     size = 0;
   }
 
