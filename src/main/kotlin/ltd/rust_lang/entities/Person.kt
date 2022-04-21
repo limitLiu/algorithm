@@ -1,8 +1,5 @@
 package ltd.rust_lang.entities
 
-import javax.swing.Spring.height
-
-
 class Person(private var age: Int? = 0, var name: String? = "") {
     override fun toString(): String {
         return "Person{" +
