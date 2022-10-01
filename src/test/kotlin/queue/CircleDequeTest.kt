@@ -1,6 +1,6 @@
 package queue
 
-import ltd.rust_lang.utils.queue.CircleDeque
+import wiki.mdzz.utils.queue.CircleDeque
 import org.junit.Assert
 import org.junit.Test
 

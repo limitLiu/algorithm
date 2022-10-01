@@ -1,6 +1,6 @@
 package queue
 
-import ltd.rust_lang.utils.queue.CircleQueue
+import wiki.mdzz.utils.queue.CircleQueue
 import org.junit.Assert.assertTrue
 import org.junit.Test
 

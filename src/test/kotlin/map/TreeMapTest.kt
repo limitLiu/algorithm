@@ -1,6 +1,6 @@
 package map
 
-import ltd.rust_lang.utils.map.TreeMap
+import wiki.mdzz.utils.map.TreeMap
 import org.junit.Assert
 import org.junit.Test
 

@@ -1,5 +1,5 @@
-import ltd.rust_lang.entities.Person
-import ltd.rust_lang.utils.map.HashMap
+import wiki.mdzz.entities.Person
+import wiki.mdzz.utils.map.HashMap
 
 object Main {
     @JvmStatic

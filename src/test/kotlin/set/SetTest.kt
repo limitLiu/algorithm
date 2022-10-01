@@ -1,7 +1,7 @@
 package set
 
-import ltd.rust_lang.utils.set.ListSet
-import ltd.rust_lang.utils.set.TreeSet
+import wiki.mdzz.utils.set.ListSet
+import wiki.mdzz.utils.set.TreeSet
 import org.junit.Assert
 import org.junit.Test
 

@@ -1,6 +1,6 @@
 package queue
 
-import ltd.rust_lang.utils.queue.Deque
+import wiki.mdzz.utils.queue.Deque
 import org.junit.Assert.assertTrue
 import org.junit.Test
 

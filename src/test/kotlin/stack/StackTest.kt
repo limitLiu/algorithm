@@ -1,6 +1,6 @@
 package stack
 
-import ltd.rust_lang.utils.stack.Stack
+import wiki.mdzz.utils.stack.Stack
 import org.junit.Test
 import org.junit.Assert.assertTrue
 

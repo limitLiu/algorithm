@@ -1,6 +1,6 @@
 package list
 
-import ltd.rust_lang.utils.list.SinglyLinkedList
+import wiki.mdzz.utils.list.SinglyLinkedList
 import org.junit.Assert.assertTrue
 import org.junit.Test
 

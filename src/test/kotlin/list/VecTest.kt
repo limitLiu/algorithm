@@ -1,6 +1,6 @@
 package list
 
-import ltd.rust_lang.utils.list.Vec
+import wiki.mdzz.utils.list.Vec
 import org.junit.Assert.assertTrue
 import org.junit.Test
 

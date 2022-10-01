@@ -1,8 +1,8 @@
 package tree
 
-import ltd.rust_lang.utils.tree.AVLTree
-import ltd.rust_lang.utils.tree.BST
-import ltd.rust_lang.utils.tree.RBTree
+import wiki.mdzz.utils.tree.AVLTree
+import wiki.mdzz.utils.tree.BST
+import wiki.mdzz.utils.tree.RBTree
 import org.junit.Assert
 import org.junit.Test
 
