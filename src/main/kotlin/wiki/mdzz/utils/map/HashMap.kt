@@ -3,7 +3,7 @@ package wiki.mdzz.utils.map
 import java.util.Objects
 import wiki.mdzz.utils.queue.Queue
 
-open class HashMap<K, V>() : Map<K, V> {
+open class HashMap<K, V> : Map<K, V> {
     companion object {
         const val RED = false
         const val BLACK = true
@@ -33,7 +33,7 @@ open class HashMap<K, V>() : Map<K, V> {
         val index = getIndex(key)
         var root = table[index]
         if (root == null) {
-            root = Node(key, value, null)
+            root = createNode(key, value, null)
             table[index] = root
             ++size
             fixAfterPut(root)
@@ -85,7 +85,7 @@ open class HashMap<K, V>() : Map<K, V> {
             }
         } while (node != null)
 
-        val newNode = Node(key, value, parent)
+        val newNode = createNode(key, value, parent)
         if (cmp > 0) {
             parent!!.right = newNode
         } else {
@@ -195,7 +195,7 @@ open class HashMap<K, V>() : Map<K, V> {
                 setBlack(node)
                 rotateLeft(parent)
             }
-            rotateLeft(grand)
+            rotateRight(grand)
         } else {
             if (node.isLeftChild()) {
                 setBlack(node)
@@ -219,7 +219,14 @@ open class HashMap<K, V>() : Map<K, V> {
         return remove(getNode(key))
     }
 
-    protected fun remove(valNode: Node<K, V>?): V? {
+    protected open fun afterRemove(willRemove: Node<K, V>, shouldRemove: Node<K, V>) {
+    }
+
+    protected open fun createNode(key: K, value: V, parent: Node<K, V>?): Node<K, V> {
+        return Node(key, value, parent)
+    }
+
+    protected open fun remove(valNode: Node<K, V>?): V? {
         if (valNode == null) return null
         var node = valNode
         --size
@@ -233,11 +240,8 @@ open class HashMap<K, V>() : Map<K, V> {
                 node = s
             }
         }
-        val replacement = if (node.left != null) {
-            node.left
-        } else {
-            node.right
-        }
+        val replacement = node.left ?: node.right
+
         val index = getIndex(node)
         if (replacement != null) {
             replacement.parent = node.parent
@@ -259,6 +263,8 @@ open class HashMap<K, V>() : Map<K, V> {
             }
             fixAfterRemove(node)
         }
+
+        afterRemove(valNode, node)
         return oldValue
     }
 
@@ -269,7 +275,7 @@ open class HashMap<K, V>() : Map<K, V> {
         }
         val parent: Node<K, V> = node?.parent ?: return
         val left = parent.left == null || node.isLeftChild()
-        var sibling = if (parent.left == null) {
+        var sibling = if (left) {
             parent.right
         } else {
             parent.left
@@ -331,8 +337,8 @@ open class HashMap<K, V>() : Map<K, V> {
         if (grand != null) {
             grand.right = child
         }
-        if (grand != null) {
-            grand.left = grand
+        if (parent != null) {
+            parent.left = grand
         }
         afterRotate(grand, parent, child)
     }
@@ -343,8 +349,8 @@ open class HashMap<K, V>() : Map<K, V> {
         if (grand != null) {
             grand.left = child
         }
-        if (grand != null) {
-            grand.right = grand
+        if (parent != null) {
+            parent.right = grand
         }
         afterRotate(grand, parent, child)
     }
@@ -377,7 +383,7 @@ open class HashMap<K, V>() : Map<K, V> {
     }
 
     private fun setBlack(node: Node<K, V>?): Node<K, V>? {
-        return setColor(node, RED)
+        return setColor(node, BLACK)
     }
 
     private fun setRed(node: Node<K, V>?): Node<K, V>? {
@@ -513,7 +519,8 @@ open class HashMap<K, V>() : Map<K, V> {
         table = arrayOfNulls<Node<K, V>>(DEFAULT_CAPACITY)
     }
 
-    inner class Node<K, V>(var key: K, var value: V, var parent: Node<K, V>?) {
+
+    open inner class Node<K, V>(var key: K, var value: V, var parent: Node<K, V>?) {
         var color: Boolean = TreeMap.RED
         var left: Node<K, V>? = null
         var right: Node<K, V>? = null

@@ -31,3 +31,4 @@ Algorithm and data structure implementation in Java/Kotlin.
 - map
 - [x] [TreeMap](./src/main/kotlin/wiki/mdzz/utils/map/TreeMap.kt)
 - [x] [HashMap](./src/main/kotlin/wiki/mdzz/utils/map/HashMap.kt)
+- [x] [LinkedHashMap](./src/main/kotlin/wiki/mdzz/utils/map/LinkedHashMap.kt)

@@ -1,6 +1,6 @@
 package wiki.mdzz.entities
 
-class Person(private var age: Int? = 0, var name: String? = "") {
+class Person(private var age: Int? = 0, private var name: String? = "") {
     override fun toString(): String {
         return "Person{" +
                 " age=" + age +
