@@ -2,6 +2,7 @@ package set
 
 import wiki.mdzz.utils.set.ListSet
 import wiki.mdzz.utils.set.TreeSet
+import wiki.mdzz.utils.set.HashSet
 import org.junit.Assert
 import org.junit.Test
 
@@ -21,6 +22,17 @@ class SetTest {
     @Test
     fun testTreeSet() {
         val set = TreeSet<Int?>()
+        set.add(10)
+        set.add(10)
+        set.add(null)
+        Assert.assertTrue(set.size() == 1)
+        set.remove(10)
+        Assert.assertTrue(set.isEmpty)
+    }
+
+    @Test
+    fun testHashSet() {
+        val set = HashSet<Int?>()
         set.add(10)
         set.add(10)
         set.add(null)
