@@ -1,7 +1,5 @@
 package wiki.mdzz.utils.list
 
-import java.lang.IndexOutOfBoundsException
-
 abstract class DefaultList<E> : MyList<E> {
     companion object {
         const val DEFAULT_CAPACITY = 10

@@ -6,7 +6,7 @@ import org.junit.Test
 
 class SinglyLinkedListTest {
 
-    @Test()
+    @Test
     fun testAdd() {
         val linkedList = SinglyLinkedList<Int>()
         linkedList.add(10)

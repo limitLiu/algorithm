@@ -5,7 +5,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class CircleSinglyLinkedListTest {
-    @Test()
+    @Test
     fun testAdd() {
         val linkedList = CircleSinglyLinkedList<Int>()
         linkedList.add(10)

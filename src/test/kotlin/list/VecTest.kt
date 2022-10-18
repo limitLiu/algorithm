@@ -5,7 +5,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class VecTest {
-    @Test()
+    @Test
     fun testAdd() {
         val vec = Vec<Int>()
         vec.add(10)
