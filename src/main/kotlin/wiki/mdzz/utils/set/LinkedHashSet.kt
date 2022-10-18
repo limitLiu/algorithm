@@ -1,16 +1,16 @@
 package wiki.mdzz.utils.set
 
-import wiki.mdzz.utils.map.HashMap
+import wiki.mdzz.utils.map.LinkedHashMap
 
-class HashSet<E> : Set<E> {
-    private val container = HashMap<E, Unit?>()
-
-    override val isEmpty: Boolean
-        get() = size() == 0
+class LinkedHashSet<E> : Set<E> {
+    private val container = LinkedHashMap<E, Unit?>()
 
     override fun size(): Int {
         return container.size()
     }
+
+    override val isEmpty: Boolean
+        get() = size() == 0
 
     override fun clear() {
         container.clear()

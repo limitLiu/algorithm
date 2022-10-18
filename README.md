@@ -28,6 +28,7 @@ Algorithm and data structure implementation in Java/Kotlin.
 - [x] [ListSet](./src/main/kotlin/wiki/mdzz/utils/set/ListSet.kt)
 - [x] [TreeSet](./src/main/kotlin/wiki/mdzz/utils/set/TreeSet.kt)
 - [x] [HashSet](./src/main/kotlin/wiki/mdzz/utils/set/HashSet.kt)
+- [x] [LinkedHashSet](./src/main/kotlin/wiki/mdzz/utils/set/LinkedHashSet.kt)
 
 - map
 - [x] [TreeMap](./src/main/kotlin/wiki/mdzz/utils/map/TreeMap.kt)
