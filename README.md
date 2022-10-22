@@ -28,6 +28,7 @@ Algorithm and data structure implementation in Java/Kotlin.
 - [x] [AVLTree](./src/main/kotlin/wiki/mdzz/utils/tree/AVLTree.kt)
 - [ ] B
 - [x] [RBTree](./src/main/kotlin/wiki/mdzz/utils/tree/RBTree.kt)
+- [x] [Trie](./src/main/kotlin/wiki/mdzz/utils/tree/Trie.kt)
 
 ### set
 
