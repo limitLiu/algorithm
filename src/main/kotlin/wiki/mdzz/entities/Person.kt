@@ -1,6 +1,6 @@
 package wiki.mdzz.entities
 
-class Person(private var age: Int? = 0, private var name: String? = "") {
+class Person(var age: Int = 0, var name: String = "") {
     override fun toString(): String {
         return "Person{" +
                 " age=" + age +
@@ -13,12 +13,12 @@ class Person(private var age: Int? = 0, private var name: String? = "") {
         if (other == null || other.javaClass != javaClass) return false
 
         val person = other as Person
-        return person.age === age && if (person.name == null) name == null else person.name == name
+        return person.age == age && if (person.name.isEmpty()) name.isEmpty() else person.name == name
     }
 
     override fun hashCode(): Int {
         var hashCode = age.hashCode()
-        hashCode = hashCode * 31 + if (name != null) name.hashCode() else 0
+        hashCode = hashCode * 31 + if (name.isEmpty()) name.hashCode() else 0
         return hashCode
     }
 }

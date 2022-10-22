@@ -20,6 +20,7 @@ Algorithm and data structure implementation in Java/Kotlin.
 - [x] [Deque](./src/main/kotlin/wiki/mdzz/utils/queue/Deque.kt)
 - [x] [CircleQueue](./src/main/kotlin/wiki/mdzz/utils/queue/CircleQueue.kt)
 - [x] [CircleDeque](./src/main/kotlin/wiki/mdzz/utils/queue/CircleDeque.kt)
+- [x] [PriorityQueue](./src/main/kotlin/wiki/mdzz/utils/queue/PriorityQueue.kt)
 
 ### tree
 

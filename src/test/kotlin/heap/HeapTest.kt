@@ -2,6 +2,7 @@ package heap
 
 import org.junit.Assert
 import org.junit.Test
+import wiki.mdzz.printer.BinaryTrees
 import wiki.mdzz.utils.heap.BinaryHeap
 
 class HeapTest {
@@ -42,5 +43,23 @@ class HeapTest {
         Assert.assertTrue(heap.remove() == 6)
         Assert.assertTrue(heap.size() == 14)
         Assert.assertTrue(heap.get() == 16)
+    }
+
+    @Test
+    fun testTopK() {
+        val k = 5
+        val data = arrayOf(88, 44, 53, 41, 16, 6, 70, 18, 85, 99, 81, 23, 36, 43, 37)
+        val heap = BinaryHeap<Int> { t1, t2 -> t2 - t1 }
+        data.forEach { e ->
+            if (heap.size() < k) {
+                heap.add(e)
+            } else if (heap.get() < e) {
+                heap.replace(e)
+            }
+        }
+        Assert.assertTrue(heap.remove() == 70)
+        Assert.assertTrue(heap.size() == 4)
+        Assert.assertTrue(heap.get() == 81)
+        BinaryTrees.println(heap)
     }
 }
