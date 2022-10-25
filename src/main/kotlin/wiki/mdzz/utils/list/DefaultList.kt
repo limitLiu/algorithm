@@ -31,4 +31,3 @@ abstract class DefaultList<E> : MyList<E> {
         if (index >= size() || index < 0) throwIndexOutOfBoundsException(index)
     }
 }
-

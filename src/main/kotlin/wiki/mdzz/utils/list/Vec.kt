@@ -1,10 +1,28 @@
 package wiki.mdzz.utils.list
 
-class Vec<E>(capacity: Int = DEFAULT_CAPACITY) : DefaultList<E>() {
-    private var elements: Array<Any?>
+class Vec<E> : DefaultList<E> {
+    companion object {
+        fun <E> arrayOf(vararg args: E?): Vec<E> {
+            return Vec(args as Array<E?>)
+        }
+    }
 
-    init {
-        this.elements = arrayOfNulls(capacity)
+    private var elements: Array<E?>
+    private var capacity = DEFAULT_CAPACITY
+
+    constructor(capacity: Int) {
+        this.capacity = capacity
+        this.elements = arrayOfNulls<Any>(capacity) as Array<E?>
+    }
+
+    constructor(elements: Array<E?>? = null) : this(DEFAULT_CAPACITY) {
+        this.elements = arrayOfNulls<Any?>(
+            elements?.size ?: capacity
+        ) as Array<E?>
+        if (elements != null) {
+            size = elements.size
+            System.arraycopy(elements, 0, this.elements, 0, size)
+        }
     }
 
     override fun add(index: Int, element: E?): Boolean {
@@ -30,7 +48,7 @@ class Vec<E>(capacity: Int = DEFAULT_CAPACITY) : DefaultList<E>() {
 
     override fun remove(index: Int): E? {
         rangeCheck(index)
-        val old = elements[index] as E?
+        val old = elements[index]
 
         /*
         for (int i = index + 1; i < size; ++i) {
@@ -52,14 +70,14 @@ class Vec<E>(capacity: Int = DEFAULT_CAPACITY) : DefaultList<E>() {
 
     override operator fun set(index: Int, element: E?): E? {
         rangeCheck(index)
-        val old = elements[index] as E?
+        val old = elements[index]
         elements[index] = element
         return old
     }
 
     override fun get(index: Int): E? {
         rangeCheck(index)
-        return elements[index] as E?
+        return elements[index]
     }
 
     override fun clear() {
@@ -80,7 +98,7 @@ class Vec<E>(capacity: Int = DEFAULT_CAPACITY) : DefaultList<E>() {
         return ELEMENT_NOT_FOUND
     }
 
-    fun toArray(): Array<out Any?> {
+    fun toArray(): Array<out E?> {
         return elements.copyOf(size)
     }
 
@@ -89,7 +107,7 @@ class Vec<E>(capacity: Int = DEFAULT_CAPACITY) : DefaultList<E>() {
         if (old >= capacity) return
         // old + (old >> 1)
         val newCap = old + (old shr 1)
-        val newElements = arrayOfNulls<Any>(newCap)
+        val newElements = arrayOfNulls<Any>(newCap) as Array<E?>
         if (size() >= 0) {
 //            System.arraycopy(elements, 0, newElements, 0, size())
             for (i in 0 until size()) {
@@ -104,7 +122,7 @@ class Vec<E>(capacity: Int = DEFAULT_CAPACITY) : DefaultList<E>() {
         // old >> 1
         val newCap = old shr 1
         if (size > newCap || old <= DEFAULT_CAPACITY) return
-        val newElements = arrayOfNulls<Any>(newCap)
+        val newElements = arrayOfNulls<Any>(newCap) as Array<E?>
         if (size() >= 0) {
 //            System.arraycopy(elements, 0, newElements, 0, size())
             for (i in 0 until size()) {

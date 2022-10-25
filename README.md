@@ -2,6 +2,8 @@
 
 Algorithm and data structure implementation in Java/Kotlin.
 
+## data structure
+
 ### list
 
 - [x] [ArrayList](./src/main/kotlin/wiki/mdzz/utils/list/Vec.kt)
@@ -15,7 +17,7 @@ Algorithm and data structure implementation in Java/Kotlin.
 - [x] [Stack](./src/main/kotlin/wiki/mdzz/utils/stack/Stack.kt)
 
 ### queue
- 
+
 - [x] [Queue](./src/main/kotlin/wiki/mdzz/utils/queue/Queue.kt)
 - [x] [Deque](./src/main/kotlin/wiki/mdzz/utils/queue/Deque.kt)
 - [x] [CircleQueue](./src/main/kotlin/wiki/mdzz/utils/queue/CircleQueue.kt)
@@ -38,9 +40,17 @@ Algorithm and data structure implementation in Java/Kotlin.
 - [x] [LinkedHashSet](./src/main/kotlin/wiki/mdzz/utils/set/LinkedHashSet.kt)
 
 ### map
+
 - [x] [TreeMap](./src/main/kotlin/wiki/mdzz/utils/map/TreeMap.kt)
 - [x] [HashMap](./src/main/kotlin/wiki/mdzz/utils/map/HashMap.kt)
 - [x] [LinkedHashMap](./src/main/kotlin/wiki/mdzz/utils/map/LinkedHashMap.kt)
 
 ### heap
+
 - [x] [BinaryHeap](./src/main/kotlin/wiki/mdzz/utils/heap/BinaryHeap.kt)
+
+## algorithm
+
+### Sort
+
+- [x] [Bubble](./src/main/kotlin/wiki/mdzz/algorithm/Bubble.kt)

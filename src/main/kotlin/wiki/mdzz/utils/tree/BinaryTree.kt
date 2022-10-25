@@ -64,7 +64,6 @@ abstract class BinaryTree<E> : BinaryTreeInfo {
         preorder(node.left)
         preorder(node.right)
     }
-     */
     fun preorder(visitor: ((e: E?) -> Boolean)?) {
         if (root == null || visitor == null) return
         val stack = Stack<Node<E>>()
@@ -81,6 +80,40 @@ abstract class BinaryTree<E> : BinaryTreeInfo {
             }
         }
     }
+     */
+
+    fun preOrder(visitor: ((e: E?) -> Boolean)?) {
+        if (root == null || visitor == null) return
+        val stack = Stack<Node<E>>()
+        stack.push(root)
+        while (!stack.isEmpty) {
+            val node = stack.pop()
+            if (visitor(node!!.element)) return
+            if (node.right != null) {
+                stack.push(node.right)
+            }
+            if (node.left != null) {
+                stack.push(node.left)
+            }
+        }
+    }
+
+    fun preorder(visitor: ((e: E?) -> Boolean)?) {
+        if (root == null || visitor == null) return
+        val stack = Stack<Node<E>>()
+        var node = root
+        while (true) {
+            node = if (node != null) {
+                if (visitor(node.element)) return
+                if (node.right != null) stack.push(node.right)
+                node.left
+            } else if (!stack.isEmpty) {
+                stack.pop()
+            } else {
+                break
+            }
+        }
+    }
 
     /*
     fun inorder() {
@@ -93,7 +126,6 @@ abstract class BinaryTree<E> : BinaryTreeInfo {
         println(node.element)
         inorder(node.right)
     }
-     */
     fun inorder(visitor: ((e: E?) -> Boolean)?) {
         if (root == null || visitor == null) return
         val stack = Stack<Node<E>>()
@@ -107,6 +139,25 @@ abstract class BinaryTree<E> : BinaryTreeInfo {
                 node = stack.pop()
                 visitor(node!!.element)
                 node = node.right
+            }
+        }
+    }
+     */
+
+    fun inorder(visitor: ((e: E?) -> Boolean)?) {
+        if (root == null || visitor == null) return
+        val stack = Stack<Node<E>>()
+        var node = root
+        while (true) {
+            if (node != null) {
+                stack.push(node)
+                node = node.left
+            } else if (!stack.isEmpty) {
+                node = stack.pop()
+                if (visitor(node!!.element)) return
+                node = node.right
+            } else {
+                break
             }
         }
     }
@@ -142,6 +193,27 @@ abstract class BinaryTree<E> : BinaryTreeInfo {
                     if (visitor(node!!.element)) return
                     last = node
                     node = null
+                }
+            }
+        }
+    }
+
+    fun postorder(visitor: ((e: E?) -> Boolean)?) {
+        if (root == null || visitor == null) return
+        val stack = Stack<Node<E>>()
+        stack.push(root)
+        var prev: Node<E>? = null
+        while (!stack.isEmpty) {
+            val top = stack.peek()
+            if (top!!.isLeaf() || (prev != null && prev.parent == top)) {
+                prev = stack.pop()
+                if (visitor(prev!!.element)) return
+            } else {
+                if (top.right != null) {
+                    stack.push(top.right)
+                }
+                if (top.left != null) {
+                    stack.push(top.left)
                 }
             }
         }
