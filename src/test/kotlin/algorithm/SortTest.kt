@@ -4,6 +4,7 @@ import org.junit.Assert
 import org.junit.Test
 import wiki.mdzz.algorithm.sort.Bubble
 import wiki.mdzz.algorithm.sort.Heap
+import wiki.mdzz.algorithm.sort.Insertion
 import wiki.mdzz.algorithm.sort.Selection
 import wiki.mdzz.utils.list.Vec
 
@@ -50,6 +51,17 @@ class SortTest {
     fun heapTest() {
         val vec0 = Vec.arrayOf(35, 1, 3, 66, 5)
         Heap<Int>().sort(vec0)
+        Assert.assertTrue(vec0[0] == 1)
+        Assert.assertTrue(vec0[1] == 3)
+        Assert.assertTrue(vec0[2] == 5)
+        Assert.assertTrue(vec0[3] == 35)
+        Assert.assertTrue(vec0[4] == 66)
+    }
+
+    @Test
+    fun insertionTest() {
+        val vec0 = Vec.arrayOf(35, 1, 3, 66, 5)
+        Insertion<Int>().sort(vec0)
         Assert.assertTrue(vec0[0] == 1)
         Assert.assertTrue(vec0[1] == 3)
         Assert.assertTrue(vec0[2] == 5)

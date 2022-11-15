@@ -56,3 +56,4 @@ Algorithm and data structure implementation in Java/Kotlin.
 - [x] [BubbleSort](./src/main/kotlin/wiki/mdzz/algorithm/sort/Bubble.kt)
 - [x] [SelectionSort](./src/main/kotlin/wiki/mdzz/algorithm/sort/Selection.kt)
 - [x] [HeapSort](./src/main/kotlin/wiki/mdzz/algorithm/sort/Heap.kt)
+- [x] [InsertionSort](./src/main/kotlin/wiki/mdzz/algorithm/sort/Insertion.kt)
