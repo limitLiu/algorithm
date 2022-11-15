@@ -2,10 +2,7 @@ package algorithm
 
 import org.junit.Assert
 import org.junit.Test
-import wiki.mdzz.algorithm.sort.Bubble
-import wiki.mdzz.algorithm.sort.Heap
-import wiki.mdzz.algorithm.sort.Insertion
-import wiki.mdzz.algorithm.sort.Selection
+import wiki.mdzz.algorithm.sort.*
 import wiki.mdzz.utils.list.Vec
 
 class SortTest {
@@ -67,5 +64,8 @@ class SortTest {
         Assert.assertTrue(vec0[2] == 5)
         Assert.assertTrue(vec0[3] == 35)
         Assert.assertTrue(vec0[4] == 66)
+
+        Assert.assertTrue(BinarySearch.getInsertIndex(vec0, 3) == 2)
+        Assert.assertTrue(BinarySearch.indexOf(vec0, 3) == 1)
     }
 }

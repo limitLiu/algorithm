@@ -26,4 +26,8 @@ abstract class Sort<T : Comparable<T>> {
         vec!![lhs] = vec!![rhs]
         vec!![rhs] = temp
     }
+
+    protected fun move(lhs: Int, rhs: Int) {
+        vec!![lhs] = vec!![rhs]
+    }
 }
