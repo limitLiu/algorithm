@@ -23,7 +23,7 @@ class BinaryHeap<E> : AbstractHeap<E>, BinaryTreeInfo {
         comparator: Comparator<E>?,
         capacity: Int = DEFAULT_CAPACITY
     ) : super(comparator) {
-        if (elements == null || elements.isEmpty()) {
+        if (elements.isNullOrEmpty()) {
             this.elements = arrayOfNulls<Any?>(capacity) as Array<E?>
         } else {
             size = elements.size
