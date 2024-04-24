@@ -6,54 +6,54 @@ Algorithm and data structure implementation in Java/Kotlin.
 
 ### list
 
-- [x] [ArrayList](./src/main/kotlin/wiki/mdzz/utils/list/Vec.kt)
-- [x] [SinglyLinkedList](./src/main/kotlin/wiki/mdzz/utils/list/SinglyLinkedList.kt)
-- [x] [LinkedList](./src/main/kotlin/wiki/mdzz/utils/list/LinkedList.kt)
-- [x] [CircleSinglyLinkedList](./src/main/kotlin/wiki/mdzz/utils/list/CircleSinglyLinkedList.kt)
-- [x] [CircleLinkedList](./src/main/kotlin/wiki/mdzz/utils/list/CircleLinkedList.kt)
+- [x] [ArrayList](./src/main/kotlin/net/wu_chinese/utils/list/Vec.kt)
+- [x] [SinglyLinkedList](./src/main/kotlin/net/wu_chinese/utils/list/SinglyLinkedList.kt)
+- [x] [LinkedList](./src/main/kotlin/net/wu_chinese/utils/list/LinkedList.kt)
+- [x] [CircleSinglyLinkedList](./src/main/kotlin/net/wu_chinese/utils/list/CircleSinglyLinkedList.kt)
+- [x] [CircleLinkedList](./src/main/kotlin/net/wu_chinese/utils/list/CircleLinkedList.kt)
 
 ### stack
 
-- [x] [Stack](./src/main/kotlin/wiki/mdzz/utils/stack/Stack.kt)
+- [x] [Stack](./src/main/kotlin/net/wu_chinese/utils/stack/Stack.kt)
 
 ### queue
 
-- [x] [Queue](./src/main/kotlin/wiki/mdzz/utils/queue/Queue.kt)
-- [x] [Deque](./src/main/kotlin/wiki/mdzz/utils/queue/Deque.kt)
-- [x] [CircleQueue](./src/main/kotlin/wiki/mdzz/utils/queue/CircleQueue.kt)
-- [x] [CircleDeque](./src/main/kotlin/wiki/mdzz/utils/queue/CircleDeque.kt)
-- [x] [PriorityQueue](./src/main/kotlin/wiki/mdzz/utils/queue/PriorityQueue.kt)
+- [x] [Queue](./src/main/kotlin/net/wu_chinese/utils/queue/Queue.kt)
+- [x] [Deque](./src/main/kotlin/net/wu_chinese/utils/queue/Deque.kt)
+- [x] [CircleQueue](./src/main/kotlin/net/wu_chinese/utils/queue/CircleQueue.kt)
+- [x] [CircleDeque](./src/main/kotlin/net/wu_chinese/utils/queue/CircleDeque.kt)
+- [x] [PriorityQueue](./src/main/kotlin/net/wu_chinese/utils/queue/PriorityQueue.kt)
 
 ### tree
 
-- [x] [BST](./src/main/kotlin/wiki/mdzz/utils/tree/BST.kt)
-- [x] [AVLTree](./src/main/kotlin/wiki/mdzz/utils/tree/AVLTree.kt)
+- [x] [BST](./src/main/kotlin/net/wu_chinese/utils/tree/BST.kt)
+- [x] [AVLTree](./src/main/kotlin/net/wu_chinese/utils/tree/AVLTree.kt)
 - [ ] B
-- [x] [RBTree](./src/main/kotlin/wiki/mdzz/utils/tree/RBTree.kt)
-- [x] [Trie](./src/main/kotlin/wiki/mdzz/utils/tree/Trie.kt)
+- [x] [RBTree](./src/main/kotlin/net/wu_chinese/utils/tree/RBTree.kt)
+- [x] [Trie](./src/main/kotlin/net/wu_chinese/utils/tree/Trie.kt)
 
 ### set
 
-- [x] [ListSet](./src/main/kotlin/wiki/mdzz/utils/set/ListSet.kt)
-- [x] [TreeSet](./src/main/kotlin/wiki/mdzz/utils/set/TreeSet.kt)
-- [x] [HashSet](./src/main/kotlin/wiki/mdzz/utils/set/HashSet.kt)
-- [x] [LinkedHashSet](./src/main/kotlin/wiki/mdzz/utils/set/LinkedHashSet.kt)
+- [x] [ListSet](./src/main/kotlin/net/wu_chinese/utils/set/ListSet.kt)
+- [x] [TreeSet](./src/main/kotlin/net/wu_chinese/utils/set/TreeSet.kt)
+- [x] [HashSet](./src/main/kotlin/net/wu_chinese/utils/set/HashSet.kt)
+- [x] [LinkedHashSet](./src/main/kotlin/net/wu_chinese/utils/set/LinkedHashSet.kt)
 
 ### map
 
-- [x] [TreeMap](./src/main/kotlin/wiki/mdzz/utils/map/TreeMap.kt)
-- [x] [HashMap](./src/main/kotlin/wiki/mdzz/utils/map/HashMap.kt)
-- [x] [LinkedHashMap](./src/main/kotlin/wiki/mdzz/utils/map/LinkedHashMap.kt)
+- [x] [TreeMap](./src/main/kotlin/net/wu_chinese/utils/map/TreeMap.kt)
+- [x] [HashMap](./src/main/kotlin/net/wu_chinese/utils/map/HashMap.kt)
+- [x] [LinkedHashMap](./src/main/kotlin/net/wu_chinese/utils/map/LinkedHashMap.kt)
 
 ### heap
 
-- [x] [BinaryHeap](./src/main/kotlin/wiki/mdzz/utils/heap/BinaryHeap.kt)
+- [x] [BinaryHeap](./src/main/kotlin/net/wu_chinese/utils/heap/BinaryHeap.kt)
 
 ## algorithm
 
 ### Sort
 
-- [x] [BubbleSort](./src/main/kotlin/wiki/mdzz/algorithm/sort/Bubble.kt)
-- [x] [SelectionSort](./src/main/kotlin/wiki/mdzz/algorithm/sort/Selection.kt)
-- [x] [HeapSort](./src/main/kotlin/wiki/mdzz/algorithm/sort/Heap.kt)
-- [x] [InsertionSort](./src/main/kotlin/wiki/mdzz/algorithm/sort/Insertion.kt)
+- [x] [BubbleSort](./src/main/kotlin/net/wu_chinese/algorithm/sort/Bubble.kt)
+- [x] [SelectionSort](./src/main/kotlin/net/wu_chinese/algorithm/sort/Selection.kt)
+- [x] [HeapSort](./src/main/kotlin/net/wu_chinese/algorithm/sort/Heap.kt)
+- [x] [InsertionSort](./src/main/kotlin/net/wu_chinese/algorithm/sort/Insertion.kt)
