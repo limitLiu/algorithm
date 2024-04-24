@@ -1,6 +1,6 @@
 package stack
 
-import wiki.mdzz.utils.stack.Stack
+import net.wu_chinese.utils.stack.Stack
 import org.junit.Test
 import org.junit.Assert.assertTrue
 

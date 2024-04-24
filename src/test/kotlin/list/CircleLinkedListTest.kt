@@ -1,6 +1,6 @@
 package list
 
-import wiki.mdzz.utils.list.CircleLinkedList
+import net.wu_chinese.utils.list.CircleLinkedList
 import org.junit.Assert.assertTrue
 import org.junit.Test
 

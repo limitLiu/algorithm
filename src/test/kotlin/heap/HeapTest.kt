@@ -2,8 +2,8 @@ package heap
 
 import org.junit.Assert
 import org.junit.Test
-import wiki.mdzz.printer.BinaryTrees
-import wiki.mdzz.utils.heap.BinaryHeap
+import net.wu_chinese.printer.BinaryTrees
+import net.wu_chinese.utils.heap.BinaryHeap
 
 class HeapTest {
     @Test

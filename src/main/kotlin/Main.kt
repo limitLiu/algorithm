@@ -1,5 +1,5 @@
-import wiki.mdzz.entities.Person
-import wiki.mdzz.utils.map.LinkedHashMap
+import net.wu_chinese.entities.Person
+import net.wu_chinese.utils.map.LinkedHashMap
 
 object Main {
     @JvmStatic
@@ -13,10 +13,12 @@ object Main {
                     p1 = Person(i, "p${i}")
                     hashMap.put(p1, i)
                 }
+
                 12 -> {
                     p2 = Person(i, "p${i}")
                     hashMap.put(p2, i)
                 }
+
                 else -> {
                     val p = Person(i, "p${i}")
                     hashMap.put(p, i)

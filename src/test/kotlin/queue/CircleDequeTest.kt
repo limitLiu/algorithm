@@ -1,6 +1,6 @@
 package queue
 
-import wiki.mdzz.utils.queue.CircleDeque
+import net.wu_chinese.utils.queue.CircleDeque
 import org.junit.Assert
 import org.junit.Test
 

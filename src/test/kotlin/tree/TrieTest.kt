@@ -2,7 +2,7 @@ package tree
 
 import org.junit.Assert
 import org.junit.Test
-import wiki.mdzz.utils.tree.Trie
+import net.wu_chinese.utils.tree.Trie
 
 class TrieTest {
     @Test

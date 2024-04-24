@@ -1,6 +1,6 @@
 package list
 
-import wiki.mdzz.utils.list.LinkedList
+import net.wu_chinese.utils.list.LinkedList
 import org.junit.Assert.assertTrue
 import org.junit.Test
 

@@ -2,8 +2,8 @@ package queue
 
 import org.junit.Assert
 import org.junit.Test
-import wiki.mdzz.entities.Person
-import wiki.mdzz.utils.queue.PriorityQueue
+import net.wu_chinese.entities.Person
+import net.wu_chinese.utils.queue.PriorityQueue
 
 class PriorityQueueTest {
     @Test

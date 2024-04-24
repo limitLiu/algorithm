@@ -1,6 +1,6 @@
 package map
 
-import wiki.mdzz.utils.map.TreeMap
+import net.wu_chinese.utils.map.TreeMap
 import org.junit.Assert
 import org.junit.Test
 

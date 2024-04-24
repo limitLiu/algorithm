@@ -1,6 +1,6 @@
 package queue
 
-import wiki.mdzz.utils.queue.Queue
+import net.wu_chinese.utils.queue.Queue
 import org.junit.Assert.assertTrue
 import org.junit.Test
 

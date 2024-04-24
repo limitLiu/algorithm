@@ -1,6 +1,6 @@
 package map
 
-import wiki.mdzz.utils.map.HashMap
+import net.wu_chinese.utils.map.HashMap
 import org.junit.Assert
 import org.junit.Test
 

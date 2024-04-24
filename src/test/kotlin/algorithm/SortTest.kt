@@ -2,8 +2,8 @@ package algorithm
 
 import org.junit.Assert
 import org.junit.Test
-import wiki.mdzz.algorithm.sort.*
-import wiki.mdzz.utils.list.Vec
+import net.wu_chinese.algorithm.sort.*
+import net.wu_chinese.utils.list.Vec
 
 class SortTest {
     @Test

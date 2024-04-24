@@ -1,8 +1,8 @@
 package tree
 
-import wiki.mdzz.utils.tree.AVLTree
-import wiki.mdzz.utils.tree.BST
-import wiki.mdzz.utils.tree.RBTree
+import net.wu_chinese.utils.tree.AVLTree
+import net.wu_chinese.utils.tree.BST
+import net.wu_chinese.utils.tree.RBTree
 import org.junit.Assert
 import org.junit.Test
 

@@ -1,6 +1,6 @@
 package list
 
-import wiki.mdzz.utils.list.Vec
+import net.wu_chinese.utils.list.Vec
 import org.junit.Assert.assertTrue
 import org.junit.Test
 

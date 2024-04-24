@@ -1,9 +1,9 @@
 package set
 
-import wiki.mdzz.utils.set.ListSet
-import wiki.mdzz.utils.set.TreeSet
-import wiki.mdzz.utils.set.HashSet
-import wiki.mdzz.utils.set.LinkedHashSet
+import net.wu_chinese.utils.set.ListSet
+import net.wu_chinese.utils.set.TreeSet
+import net.wu_chinese.utils.set.HashSet
+import net.wu_chinese.utils.set.LinkedHashSet
 import org.junit.Assert
 import org.junit.Test
 
