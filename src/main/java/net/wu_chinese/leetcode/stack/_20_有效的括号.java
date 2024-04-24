@@ -49,6 +49,6 @@ public class _20_有效的括号 {
                 if (map.get(stack.pop()) != c) return false;
             }
         }
-        return false;
+        return stack.isEmpty();
     }
 }
